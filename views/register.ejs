@@ -2,13 +2,88 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+<!--    <link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <style>
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    html,body{
+    	color: white;
+			width: 100%;
+			font-size: 15px;
+			height: 100%;
+			background: url(/images/21.jpg) no-repeat; 
+			background-size: 100% 100%;
+		}
+		/*媒体查询*/
+		@media screen and (min-width: 375px) {
+			html,body{
+				font-size: 15px;
+			}
+		}
+		@media screen and (min-width: 321px) {
+			html,body{
+				font-size: 13px;
+			}
+		}
+		@media screen and (max-width: 321px) {
+			html,body{
+				font-size: 12px;
+			}
+		}
+		input{
+			width:80%;	
+			margin: auto;		
+			margin-bottom: 5rem;
+			margin-top: 3rem;
+			font-size: 4.5rem;
+			padding: 2%;
+			display: block;
+			border-bottom: 1px solid white;
+			border-radius: 1rem;
+			outline: none;
+			background:rgba(255,255,255,.5);
+		}
+		.input{
+			margin-top: 10rem;
+		}
+		
+		.Hashtag{
+			text-align: center;
+			width: 70%;
+			margin-left: 11rem;
+			margin-top: 25rem;
+			display: inline-block;
+			margin-bottom: 10rem;
+			font-size: 100px;
+		    font-weight:bold;	
+		    border: 1px solid white;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		}
+		button{	
+			width: 80%;	
+			margin: auto;
+			margin-top: 7rem;
+			background-color: rgba(254,179,84,.8);
+		    font-size: 50px;
+		    display: block;
+		    padding:2%;	
+		    color: white;
+		    border-radius:3rem ;
+		}
+    </style>
   </head>
   <body>
     <form action="/user" method="post">
-    	<input type="text" name="username" id="username" value="" />
-    	<input type="text" name="userposs" id="userposs" value="" />
-    	<input type="submit" value="注册"/>
+    	<div class="Hashtag"><%= title %></div>
+    	<input type="text" name="username" id="username" value=""  placeholder="*手机号/会员号/邮箱"/>
+    	<input type="text" name="userposs" id="userposs" value="" placeholder="*请输入密码"/>
+    	<input type="text" name="userposs2" id="userposs" value="" placeholder="*请确认密码"/>
+    	<!--<input type="submit" value="注册"/>-->
+    	<button>注册</button>
     </form>
   </body>
 </html>
