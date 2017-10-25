@@ -9,7 +9,12 @@
     <form action="/liuyan" method='post'>
     	<input style="display: none;" type="" name="username" id="username" value="<%= username %>" />
     	<input type="text" name='liuyan'/>
-    	<input type="submit" name="" id="" value="" />
+    	<input type="submit" name="" id="" value="提交" />
     </form>
+    <% for( var i=0;i<liuyans.length ; i++){ %>
+    <p><%= users[liuyans.length-i] %></p>
+    <p><%= liuyans[liuyans.length-i] %></p>
+    <p><%= dates[liuyans.length-i] %></p>
+    <% } %>
   </body>
 </html>
