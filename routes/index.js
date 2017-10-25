@@ -23,6 +23,10 @@ router.post('/user',function (req,res,next) {
 		res.render('register',{title:"密码不一致"})
 		return;
 	}
+	if (req.body.userposs===""||req.body.username==="") {
+		res.render('register',{title:"必要信息未输入"})
+		return;
+	}
 	userm.find({username:req.body.username},function (err,rb) {
 		if (rb.length == 1) {
 			res.render('register',{title:"用户名已存在"})
