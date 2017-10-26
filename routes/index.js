@@ -87,4 +87,18 @@ router.post('/liuyan',function (req,res,next) {
 			})
 	});
 })
+router.post('/check',function (req,res,next) {
+	liuyanm.find({username:req.body.name},function (err,rb){
+		console.log(rb);
+		var liuyans=[];
+		var users=[];
+		var dates=[];
+		for (i=0;i<rb.length;i++) {
+					liuyans.push(rb[i].liuyan)
+					users.push(rb[i].username)
+					dates.push(rb[i].date)
+				}
+				res.render('check',{username:req.body.name,title:'留言板',liuyans:liuyans,users:users,dates:dates})
+	})
+})
 module.exports = router;

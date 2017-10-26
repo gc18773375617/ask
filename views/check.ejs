@@ -185,11 +185,11 @@
   	<div id="particles-js">
   		<div class="biban">
   			<span>
-  				MYNAME
+  				NAME
   			</span><%= username %>
   		</div> 
   		<div class="find">
-  			查找 			
+  			<a href="javascript:history.go(-1)">返回</a>		
   		</div>
   		<form action="/check" method="post" class="f2">
 	  		<div class="motai">
@@ -198,7 +198,7 @@
 	  			<button>搜索用户</button>
 	  		</div>
   		</form>
-  		<script>
+  		<!--<script>
   			var find=document.querySelector('.find');
   			var mo=document.querySelector('.motai');
   			find.addEventListener("click",toggle,false);	
@@ -206,7 +206,7 @@
   				var isShow=mo.style.display;
   				mo.style.display=isShow=="block"?"":"block";
   			}
-  		</script>
+  		</script>-->
   		<div class="neirong">
   			<% for( var i=1;i<liuyans.length ; i++){ %>
   				<div>
@@ -216,12 +216,7 @@
   				</div>	  
   				
 		    <% } %>  	
-  		</div>
-		    <form action="/liuyan" method='post' class="f1">
-		    	<input style="display: none;" type="" name="username" id="username" value="<%= username %>" />
-		    	<input type="text" name='liuyan'/>
-		    	<button>发布</button>
-		    </form>		     		
+  		</div>	
   	</div>
     
     <!-- scripts -->
