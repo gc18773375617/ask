@@ -2,19 +2,164 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" media="screen" href="/particles20160927/css/style.css">
+    <style>
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    html,body{
+    	color: white;
+			width: 100%;
+			font-size: 15px;
+			height: 100%;
+			/*background: url(/images/21.jpg) no-repeat; 
+			background-size: 100% 100%;*/
+		}
+		/*媒体查询*/
+		@media screen and (min-width: 375px) {
+			html,body{
+				font-size: 15px;
+			}
+		}
+		@media screen and (min-width: 321px) {
+			html,body{
+				font-size: 13px;
+			}
+		}
+		@media screen and (max-width: 321px) {
+			html,body{
+				font-size: 12px;
+			}
+		}
+		form{
+			position: fixed;
+			bottom: 1rem;
+			width: 100%;
+		}
+		input{
+			width:70%;		
+			font-size: 4.5rem;
+			margin-left: 1rem;
+			padding: 2%;
+			float: left;
+			border-bottom: 1px solid white;
+			border-radius: 1rem;
+			outline: none;
+			background:rgba(255,255,255,.5);
+		}
+		button{
+			float: left;
+			width: 20%;
+			height: 8rem;
+			margin-left: 2rem;
+			border-radius: 1rem;
+			background:rgba(39,40,44,.9);
+			outline: none;
+			color: white;
+			font-size: 4.5rem;
+		}
+		.biban{
+			position: fixed;
+			top: 2rem;
+			left: 2rem;
+			font-size: 4.5rem;
+		}
+		.biban span{
+			color: rgba(255,255,255,.5);
+		}
+		
+		.neirong{
+			position: absolute;
+			top: 15rem;
+			left: 2rem;
+			font-size: 3.5rem;
+			width: 90%;
+			height: 80%;
+			overflow: auto;
+		}
+		.neirong div{
+			display: inline-block;
+			margin-bottom:3rem;
+			width: 100%;
+			/*background: yellowgreen;*/
+			/*height: 3rem;*/
+			/*padding: 1rem 0;*/
+			/*background: red;*/
+			position: relative;
+		}
+		.name{
+			width: 20%;
+			height: 5rem;
+			text-align: center;
+			line-height: 5rem;
+			border: 1px solid white;
+			border-radius: 1rem;
+			margin-right: 1rem;
+			box-sizing: border-box;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.hua{
+			width: 80%;
+			border-bottom: 2px solid white;
+			border-radius: 1rem;
+			padding: 1rem;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 21%;
+			box-sizing: border-box;
+			text-indent: 1rem;
+			/*margin: auto;*/
+			background: rgba(154,205,50,.1);
+		}
+		.dile{
+			border-left: 2px solid white;
+			border-right: 2px solid white;
+			border-radius: 1rem;
+			text-align: center;
+			line-height: 4rem;
+			width: 30rem;
+			display: block;
+			height: 4rem;		
+			float: right;
+			margin-top:2rem;
+			box-sizing: border-box;
+	/*		margin-bottom: 5rem;*/
+		}
+    </style>
   </head>
   <body>
-    <%= username %>
-    <form action="/liuyan" method='post'>
-    	<input style="display: none;" type="" name="username" id="username" value="<%= username %>" />
-    	<input type="text" name='liuyan'/>
-    	<input type="submit" name="" id="" value="提交" />
-    </form>
-    <% for( var i=0;i<liuyans.length ; i++){ %>
-    <p><%= users[liuyans.length-i] %></p>
-    <p><%= liuyans[liuyans.length-i] %></p>
-    <p><%= dates[liuyans.length-i] %></p>
-    <% } %>
+  	<div id="particles-js">
+  		<div class="biban">
+  			<span>
+  				MYNAME
+  			</span><%= username %>
+  		</div> 
+  		<div class="neirong">
+  			<% for( var i=1;i<liuyans.length ; i++){ %>
+  				<div>
+  					<p class="name"><%= users[liuyans.length-i] %></p>
+				    <p class="hua">:<%= liuyans[liuyans.length-i] %></p>	
+				    <p class="dile"><%= dates[liuyans.length-i] %></p>
+  				</div>	  
+  				
+		    <% } %>  	
+  		</div>
+		    <form action="/liuyan" method='post'>
+		    	<input style="display: none;" type="" name="username" id="username" value="<%= username %>" />
+		    	<input type="text" name='liuyan'/>
+		    	<button>发布</button>
+		    </form>		     		
+  	</div>
+    
+    <!-- scripts -->
+		<script src="/particles20160927/particles.min.js"></script>
+		<script src="/particles20160927/js/app.js"></script>
+		
+		<!-- stats.js -->
+		<script src="/particles20160927/js/lib/stats.js"></script>
   </body>
 </html>
