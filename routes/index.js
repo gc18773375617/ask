@@ -37,7 +37,7 @@ router.post('/user',function (req,res,next) {
 		userposs:req.body.userposs
 	})
 	usersave.save();
-	res.render('register',{title:"注册成功"})
+	res.render('login',{title:"注册成功"})
 	})
 })
 router.post('/userlogin',function (req,res,next) {
