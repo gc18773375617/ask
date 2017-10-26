@@ -32,12 +32,12 @@
 				font-size: 12px;
 			}
 		}
-		form{
+		.f1{
 			position: fixed;
 			bottom: 1rem;
 			width: 100%;
 		}
-		input{
+		.f1 input{
 			width:70%;		
 			font-size: 4.5rem;
 			margin-left: 1rem;
@@ -48,7 +48,7 @@
 			outline: none;
 			background:rgba(255,255,255,.5);
 		}
-		button{
+				.f1 button{
 			float: left;
 			width: 20%;
 			height: 8rem;
@@ -129,6 +129,56 @@
 			box-sizing: border-box;
 	/*		margin-bottom: 5rem;*/
 		}
+		.find{
+			font-size: 4.5rem;
+			padding: 0 1rem;
+			color: rgba(255,255,255,.5);
+			border-left: 2px solid white;
+			border-right: 2px solid white;
+			border-radius: 2rem;
+			position: absolute;
+			right: 0rem;
+			top: 2rem;
+			z-index: 60;
+		}
+		.motai{
+			width: 80%;
+			height: 30%;
+			border:2px solid rgba(154,205,50,.8);
+			background:rgba(154,205,50,1) ;
+			border-radius:2rem ;
+			position: absolute;
+			top: 20%;
+			left: 7rem;
+			z-index: 50;
+			display: none;
+		}
+		.motai input{
+			margin: auto;
+			width: 80%;
+			height: 20%;	
+			font-size: 4.5rem;
+			padding: 2%;
+			border-bottom: 1px solid white;
+			border-radius: 2rem;
+			outline: none;
+			background:rgba(255,255,255,1);
+			position: absolute;
+			top: 20%;
+			left: 5rem;
+		}
+		.motai button{
+				width: 80%;	
+				margin: auto;
+				background-color: rgba(254,179,84,1);
+		    font-size: 50px;
+		    padding:2%;	
+		    color: white;
+		    border-radius:3rem ;
+		    position: absolute;
+				top: 60%;
+				left: 6rem;
+		}
     </style>
   </head>
   <body>
@@ -138,6 +188,24 @@
   				MYNAME
   			</span><%= username %>
   		</div> 
+  		<div class="find">
+  			查找 			
+  		</div>
+  		<form action="/user" method="post" class="f2">
+	  		<div class="motai">
+	  			<input type="password" name="username" id="username" value="" placeholder="用户名:"/>
+	  			<button>搜索用户</button>
+	  		</div>
+  		</form>
+  		<script>
+  			var find=document.querySelector('.find');
+  			var mo=document.querySelector('.motai');
+  			find.addEventListener("click",toggle,false);	
+  			function toggle(){
+  				var isShow=mo.style.display;
+  				mo.style.display=isShow=="block"?"":"block";
+  			}
+  		</script>
   		<div class="neirong">
   			<% for( var i=1;i<liuyans.length ; i++){ %>
   				<div>
@@ -148,7 +216,7 @@
   				
 		    <% } %>  	
   		</div>
-		    <form action="/liuyan" method='post'>
+		    <form action="/liuyan" method='post' class="f1">
 		    	<input style="display: none;" type="" name="username" id="username" value="<%= username %>" />
 		    	<input type="text" name='liuyan'/>
 		    	<button>发布</button>
