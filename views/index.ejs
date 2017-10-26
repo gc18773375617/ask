@@ -3,9 +3,47 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <style type="text/css">
+    	*{margin: 0;padding: 0;}
+    	html,body{height:100%;padding: 0;background: url(/lj/bg3.jpg) no-repeat;background-size: 100% 100%;}
+    	a{text-decoration: none;color: deepskyblue;}
+    	ul{list-style: none;}
+    	@media only screen and (min-width: 300px) and (max-width: 800px) {
+    		html{font-size: 50px;}
+    	}
+    	header{height: 0.8rem;box-sizing: border-box;border-bottom: 2px solid #333;background: #fcfcfc;}
+    	.logo img{width: 0.6rem;height: 0.6rem;border-radius: 5px;}
+    	.logo{float: left; margin-top: 0.1rem;}
+    	nav{height: 0.8rem;margin:auto;width: 80%;position: relative;}
+    	.index{float: left;}
+    	.index>span{line-height: 0.8rem;margin-left:0.4rem;}
+    	.index>span>a{color:deepskyblue ;}
+    	.other>ul>li{float: right;line-height:0.8rem;text-align: center;}
+    	.other>ul>li>span{color: white;margin-left: 0.2rem;}
+    	.sec-box{height: 10rem;color: white;padding-top: 2rem;width: 4rem;margin: auto;}
+    	.sec-box>a{color: white;display: block;width: 4rem;height: 1rem;text-align: center;line-height: 1rem;font-size: 0.4rem;border-radius: 40px;/*border: 1px solid black;*/background: rgba(55,43,46,0.5);}
+    	
+    </style>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+   		<header>
+   			<nav>
+   				<div class="logo"><img src="/lj/logo.png"/></div>
+   				<div  class="index"><span><a>我的首页</a></span></div>
+   				<div class="other">
+   					<ul>
+   						<li><span><a href="/login">登录</a></span></li>
+   						<li><span><a>|</a></span></li>
+   						<li><span><a href="/register">注册</a></span></li>
+   					</ul>
+   				</div>
+   			</nav>
+   		</header>
+   		<section>
+   			<div class="sec-box">
+   					<a href="/login">欢迎进入</a>
+   			</div>
+   		</section>
   </body>
 </html>
