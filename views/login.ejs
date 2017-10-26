@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>登录</title>
+    <style>
+			 html,body{
+	    	color: white;
+				width: 100%;
+				font-size: 15px;
+				height: 100%;
+				background: url(/images/21.jpg) no-repeat; 
+				background-size: 100% 100%;
+			}
+			/*媒体查询*/
+			@media screen and (min-width: 375px) {
+				html,body{
+					font-size: 15px;
+				}
+			}
+			@media screen and (min-width: 321px) {
+				html,body{
+					font-size: 13px;
+				}
+			}
+			@media screen and (max-width: 321px) {
+				html,body{
+					font-size: 12px;
+				}
+			}
+			.wrap {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				width: 600px;
+				height: 800px;
+				background: rgba(154,145,145,0.5);
+			}
+			.wrap input {
+				margin-top: 150px;
+				width: 400px;
+				height: 80px;
+				border-radius: 25px;
+				font-size: 45px;
+				opacity: 0.8;
+			}
+			.wrap b {
+				font-size: 45px;
+				margin-left: 20px;
+			}
+			#windows{  
+		    position: absolute;  
+		    top: 10%;  
+		    left: 28%;  
+		    width: 400px;  
+		    height: 200px;  
+		    background: rgba(122,122,122,0.5);  
+		    border-radius: 35px;
+		    display: none;  
+			} 
+			#windows p {
+				font-size: 45px;
+				margin: 80px;	
+			}
+			#btn {
+				margin-left: 100px;
+			}
+   </style> 
   </head>
   <body>
-    <form action="/userlogin" method="post">
-    	<input type="text" name="username" id="" value="" />
-    	<input type="text" name="userposs" id="" value="" />
-    	<input type="submit" value="登录"/>
+    <form class="wrap" action="/userlogin" method="post">
+    	<b>用户名:</b><input id="" name="username" type="text" value=""/>
+    	<b>密&nbsp;&nbsp;&nbsp;码:</b><input id="" name="userposs" type="password" value=""/>
+    	<input id="btn" type="submit" value="登录" />   	
     </form>
+    <div id="windows">
+    		<p><%= title %></p>
+    </div>
   </body>
+  <script>
+  	var Obtn = document.getElementById('btn');
+  	var Owindows = document.getElementById('windows');	
+  	Obtn.onclick = function () {
+  		Owindows.style.display = "block";
+  	};
+ 
+  </script>
 </html>
